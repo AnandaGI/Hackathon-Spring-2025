@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ejgiurr76lov"]
+
+[ext_resource type="Script" uid="uid://4kirj78hahdr" path="res://scripts/pizza_topping.gd" id="1_efumy"]
+[ext_resource type="Texture2D" uid="uid://cv5ds0f3aqk5s" path="res://assets/pepperoni.png" id="1_n3grj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3grj"]
+atlas = ExtResource("1_n3grj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efumy"]
+atlas = ExtResource("1_n3grj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vc28l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3grj")
+}],
+"loop": true,
+"name": &"crosshair",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efumy")
+}],
+"loop": true,
+"name": &"showing",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efumy"]
+radius = 8.0
+
+[node name="Pepperoni" type="Area2D"]
+script = ExtResource("1_efumy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vc28l")
+animation = &"crosshair"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_efumy")
+
+[connection signal="mouse_entered" from="." to="." method="_inside_collision"]
+[connection signal="mouse_exited" from="." to="." method="_exit_collision"]
