@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://wfij51uies0q"]
+[gd_scene load_steps=7 format=3 uid="uid://wfij51uies0q"]
 
-[ext_resource type="Script" uid="uid://0clente5ums" path="res://scripts/pizza_minigame_manager.gd" id="1_m5vyy"]
+[ext_resource type="Script" uid="uid://dl8kxnvlktt05" path="res://scripts/pizza_minigame_manager.gd" id="1_m5vyy"]
 [ext_resource type="PackedScene" uid="uid://dtexfy87rpb66" path="res://scenes/pizza_board.tscn" id="2_3w8ep"]
-[ext_resource type="FontFile" uid="uid://cwcj5tiutk5fy" path="res://assets/fonts/PixelOperator8.ttf" id="3_b0wbf"]
-[ext_resource type="Texture2D" uid="uid://b5a0wfs13mn1q" path="res://assets/background.png" id="4_7xdo8"]
-[ext_resource type="Texture2D" uid="uid://c70rq52856mu2" path="res://assets/Oven_top.png" id="5_g5dih"]
+[ext_resource type="FontFile" uid="uid://bm5x7g3qxamw0" path="res://assets/fonts/PixelOperator8.ttf" id="3_b0wbf"]
 
 [sub_resource type="Animation" id="Animation_3w8ep"]
 resource_name = "Move_in_out"
@@ -19,7 +17,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.2, 1.2, 2.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-106, 0), Vector2(273, 0), Vector2(-106, 0)]
+"values": [Vector2(-106, 0), Vector2(244, 0), Vector2(-106, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -60,28 +58,6 @@ _data = {
 &"RESET": SubResource("Animation_b0wbf")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_we0hp"]
-atlas = ExtResource("4_7xdo8")
-region = Rect2(0, 0, 450, 250)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijvue"]
-atlas = ExtResource("4_7xdo8")
-region = Rect2(450, 0, 450, 250)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_o30f0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_we0hp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ijvue")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
 [node name="Pizza Minigame" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -105,8 +81,6 @@ offset_left = -78.0
 offset_top = -102.0
 offset_right = 79.0
 offset_bottom = -79.0
-theme_override_colors/font_color = Color(0, 0.835294, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b0wbf")
 text = "Ready?"
 horizontal_alignment = 1
@@ -120,7 +94,6 @@ offset_left = -152.0
 offset_top = -101.0
 offset_right = 153.0
 offset_bottom = -78.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b0wbf")
 horizontal_alignment = 1
 
@@ -129,25 +102,14 @@ one_shot = true
 
 [node name="Label" type="Label" parent="PizzaMinigameManager"]
 offset_left = -92.0
-offset_top = 79.0
+offset_top = 78.0
 offset_right = 91.0
-offset_bottom = 102.0
-theme_override_colors/font_color = Color(0, 0.835294, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+offset_bottom = 101.0
 theme_override_fonts/font = ExtResource("3_b0wbf")
 theme_override_font_sizes/font_size = 8
 text = "Click on the topping outlines,
 Drag the pizza to the board"
 horizontal_alignment = 1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_o30f0")
-autoplay = "default"
-frame_progress = 0.640061
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(197, 0)
-texture = ExtResource("5_g5dih")
 
 [connection signal="timeout" from="PizzaMinigameManager/ReadyLabel/Timer" to="PizzaMinigameManager" method="_ready_label_timeout"]
 [connection signal="timeout" from="PizzaMinigameManager/DisplayLabel/Timer" to="PizzaMinigameManager" method="_countdown"]
