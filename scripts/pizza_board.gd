@@ -3,6 +3,7 @@ extends Area2D
 @onready var board_collision: CollisionShape2D = $CollisionShape2D
 
 signal is_occupied
+signal reset
 
 var starting_position = position
 var current_position = Vector2.ZERO
@@ -21,6 +22,9 @@ func _on_end_of_travel():
 	print("DEBUG: Board has reached the end of its travel")
 	pizza_node.queue_free()
 	pizza_node = null
+
+func _on_reset():
+	emit_signal("reset")
 
 func _process(delta: float) -> void:
 	if pizza_node:
