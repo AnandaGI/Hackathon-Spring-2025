@@ -69,7 +69,9 @@ func _inside_collision():
 func _exit_collision():
 	moused_over = false
 	print("DEBUG: Exiting collision")
-		
+
+func _snap_to_location(location: Vector2):
+	global_position = location		
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

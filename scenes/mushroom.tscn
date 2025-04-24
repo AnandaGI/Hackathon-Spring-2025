@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgmjf13sf35bg"]
 
 [ext_resource type="Script" uid="uid://4kirj78hahdr" path="res://scripts/pizza_topping.gd" id="1_0bdi0"]
-[ext_resource type="Texture2D" uid="uid://crmufviq0xm8m" path="res://assets/mushroom.png" id="1_b0s10"]
+[ext_resource type="Texture2D" uid="uid://bk8da2bixl317" path="res://assets/mushroom.png" id="1_b0s10"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0bdi0"]
 atlas = ExtResource("1_b0s10")
