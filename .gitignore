@@ -2,6 +2,3 @@
 .godot/
 /android/
 aseprites/
-*.import
-*.uid
-*.tmp
