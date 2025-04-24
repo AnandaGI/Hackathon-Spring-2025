@@ -82,7 +82,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Pizza Minigame" type="Node2D"]
+[node name="PizzaMinigame" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
