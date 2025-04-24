@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://wfij51uies0q"]
+[gd_scene load_steps=7 format=3 uid="uid://wfij51uies0q"]
 
 [ext_resource type="Script" uid="uid://dl8kxnvlktt05" path="res://scripts/pizza_minigame_manager.gd" id="1_m5vyy"]
 [ext_resource type="PackedScene" uid="uid://dtexfy87rpb66" path="res://scenes/pizza_board.tscn" id="2_3w8ep"]
 [ext_resource type="FontFile" uid="uid://bm5x7g3qxamw0" path="res://assets/fonts/PixelOperator8.ttf" id="3_b0wbf"]
-
-[sub_resource type="GDScript" id="GDScript_b0wbf"]
 
 [sub_resource type="Animation" id="Animation_3w8ep"]
 resource_name = "Move_in_out"
@@ -61,7 +59,6 @@ _data = {
 }
 
 [node name="Pizza Minigame" type="Node2D"]
-script = SubResource("GDScript_b0wbf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -102,6 +99,17 @@ horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="PizzaMinigameManager/DisplayLabel"]
 one_shot = true
+
+[node name="Label" type="Label" parent="PizzaMinigameManager"]
+offset_left = -92.0
+offset_top = 78.0
+offset_right = 91.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("3_b0wbf")
+theme_override_font_sizes/font_size = 8
+text = "Click on the topping outlines,
+Drag the pizza to the board"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="PizzaMinigameManager/ReadyLabel/Timer" to="PizzaMinigameManager" method="_ready_label_timeout"]
 [connection signal="timeout" from="PizzaMinigameManager/DisplayLabel/Timer" to="PizzaMinigameManager" method="_countdown"]

@@ -9,7 +9,7 @@ const PIZZA = preload("res://scenes/pizza.tscn")
 var total_pizzas_made = 0
 var ready_text_list = ["Ready?", "Set...", "GO!!!", ""]
 var ready_test_index = 0
-var time_left = 1
+var time_left = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,7 +38,7 @@ func _countdown():
 		display_label.get_node("Timer").start()
 	else:
 		display_label.add_theme_font_size_override("font_size", 8)
-		if total_pizzas_made > 3:
+		if total_pizzas_made > 5:
 			display_label.text = (
 				"You made %s pizzas! You're on fire!" % str(total_pizzas_made)
 			)
