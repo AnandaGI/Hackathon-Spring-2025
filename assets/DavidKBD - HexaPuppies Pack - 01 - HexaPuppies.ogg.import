@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b6l387huqgr75"
+path="res://.godot/imported/DavidKBD - HexaPuppies Pack - 01 - HexaPuppies.ogg-a94136c12d32d498a8111e1ae4039c39.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/DavidKBD - HexaPuppies Pack - 01 - HexaPuppies.ogg"
+dest_files=["res://.godot/imported/DavidKBD - HexaPuppies Pack - 01 - HexaPuppies.ogg-a94136c12d32d498a8111e1ae4039c39.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
