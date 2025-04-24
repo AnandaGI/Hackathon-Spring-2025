@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbs2mpsfhnl37"]
+
+[ext_resource type="Texture2D" uid="uid://drq7wmnuihuo7" path="res://assets/plain_pizza.png" id="1_7q0oi"]
+[ext_resource type="Script" uid="uid://db4jaytx4h1qi" path="res://scripts/pizza.gd" id="1_xpi5f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpi5f"]
+radius = 65.3758
+
+[node name="Pizza" type="Node2D"]
+script = ExtResource("1_xpi5f")
+
+[node name="Area2D" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_7q0oi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xpi5f")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_inside_collision"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_exit_collision"]
