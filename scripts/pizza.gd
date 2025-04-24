@@ -52,7 +52,7 @@ func _is_in_blacklisted_range(location):
 		var diff_x = abs(location.x - loc.x)
 		var diff_y = abs(location.y - loc.y)
 		
-		if diff_x < 8 or diff_y < 8:
+		if diff_x < 6 or diff_y < 6:
 			return true
 	return false
 
